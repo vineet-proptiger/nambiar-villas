@@ -1,6 +1,5 @@
 'use client'
-import { MapPin } from 'lucide-react'
-import { locationImage } from '../lib/images'
+import { MapPin, Navigation } from 'lucide-react'
 
 const F_JOST = 'var(--font-jost), Montserrat, sans-serif'
 const F_SANS = 'var(--font-sans), Open Sans, sans-serif'
@@ -45,83 +44,100 @@ const Location = () => {
 
         <div className="flex flex-col lg:flex-row gap-8 items-stretch">
 
-          {/* RIGHT — Clean Landmarks List (Replaced Accordion) */}
+          {/* RIGHT — Architectural Transit Line Card (Concept 2 - Exact Original Size) */}
           <div className="w-full lg:w-[46%] lg:order-2" data-aos="fade-left" data-aos-duration="1000">
             <div style={{
-              padding: '16px 26px',
+              padding: '18px 24px',
               borderRadius: '16px',
-              background: '#F8F9FA',
+              background: '#FFFFFF',
               border: '1px solid #95B325',
               boxShadow: '0 12px 32px rgba(0, 2, 66, 0.12)',
               display: 'flex',
               flexDirection: 'column',
               height: '100%',
+              justifyContent: 'space-between',
             }}>
-              <h3 style={{
-                fontFamily: F_JOST,
-                fontSize: '19px',
-                fontWeight: '600',
-                color: '#1A2024',
-                letterSpacing: '0.04em',
-                textTransform: 'uppercase',
-                marginBottom: '10px',
-                paddingBottom: '10px',
-                borderBottom: '2px solid #6E942A',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '10px'
-              }}>
-                <MapPin size={22} className="text-[#3D5915]" />
-                <span>SEAMLESS CONNECTIVITY</span>
-              </h3>
+              <div>
+                {/* Header Title */}
+                <div style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  paddingBottom: '10px',
+                  marginBottom: '14px',
+                  borderBottom: '2px solid #6E942A',
+                }}>
+                  <h3 style={{
+                    fontFamily: F_JOST,
+                    fontSize: '18px',
+                    fontWeight: '700',
+                    color: '#1A2024',
+                    letterSpacing: '0.04em',
+                    textTransform: 'uppercase',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                    margin: 0
+                  }}>
+                    <MapPin size={22} className="text-[#3D5915]" />
+                    <span>SEAMLESS CONNECTIVITY</span>
+                  </h3>
+                  <span className="text-[11px] font-bold text-[#6E942A] bg-[#edf7e2] px-2.5 py-0.5 rounded-full border border-[#c2e29c]">
+                    📍 Origin: Villas
+                  </span>
+                </div>
 
-              <div className="flex flex-col">
-                {locationLandmarks.map((item, index) => (
-                  <div
-                    key={index}
+                {/* Vertical Transit Spine */}
+                <div className="relative pl-6 flex flex-col justify-between py-1">
+                  {/* Continuous Vertical Line */}
+                  <div 
+                    className="absolute left-[11px] top-2 bottom-3 w-[2px] rounded-full pointer-events-none"
                     style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'space-between',
-                      padding: '7px 4px',
-                      borderBottom: index === locationLandmarks.length - 1 ? 'none' : '1px solid rgba(110, 148, 42, 0.2)',
-                      fontFamily: F_SANS,
+                      background: 'linear-gradient(to bottom, #6E942A 0%, #3D5915 50%, #95B325 100%)'
                     }}
-                  >
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                      <span style={{
-                        width: '6px',
-                        height: '6px',
-                        borderRadius: '2px',
-                        background: '#6E942A',
-                        display: 'inline-block',
-                        flexShrink: 0,
-                      }} />
-                      <span style={{
-                        fontSize: '15px',
-                        color: '#1A2024',
-                        fontWeight: '500',
-                      }}>
+                  />
+
+                  {locationLandmarks.map((item, index) => (
+                    <div
+                      key={index}
+                      className="relative flex items-center justify-between py-1.5 group cursor-default"
+                    >
+                      {/* Station Node Marker */}
+                      <div className="absolute -left-6 w-[24px] flex items-center justify-center pointer-events-none">
+                        <span className="w-[10px] h-[10px] rounded-full bg-white border-[2.5px] border-[#6E942A] group-hover:scale-125 group-hover:border-[#3D5915] transition-transform duration-200 shadow-xs" />
+                      </div>
+
+                      {/* Landmark Name */}
+                      <span 
+                        className="text-[14.5px] font-semibold text-gray-800 group-hover:text-[#3D5915] transition-colors pl-1"
+                        style={{ fontFamily: F_SANS }}
+                      >
                         {item.name}
                       </span>
+
+                      {/* Distance Time Badge */}
+                      <span 
+                        className="text-[12px] font-extrabold text-[#2e4213] bg-[#edf7e2] border border-[#c4e49f] px-2.5 py-0.5 rounded-full whitespace-nowrap shadow-2xs ml-3"
+                        style={{ fontFamily: F_JOST }}
+                      >
+                        {item.dist}
+                      </span>
                     </div>
-                    <span style={{
-                      fontSize: '15px',
-                      color: '#1A2024',
-                      fontWeight: '700',
-                      fontFamily: F_JOST,
-                      whiteSpace: 'nowrap',
-                      marginLeft: '16px',
-                    }}>
-                      {item.dist}
-                    </span>
-                  </div>
-                ))}
+                  ))}
+                </div>
+              </div>
+
+              {/* Bottom Micro Footer */}
+              <div className="mt-3 pt-2.5 border-t border-[#edf4e3] flex items-center justify-between text-[11px] text-gray-500 font-medium">
+                <span className="flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-[#6E942A] animate-pulse"></span> Prime Bannerghatta Corridor
+                </span>
+                <span className="text-[#3D5915] font-bold">Bangalore South</span>
               </div>
             </div>
           </div>
 
-          {/* LEFT — Location Aerial Map Image */}
+          {/* LEFT — Location Aerial Map (Exact Original Size & Frame) */}
           <div className="w-full lg:flex-1 lg:order-1 flex flex-col justify-center" data-aos="fade-right" data-aos-duration="1000">
             <div style={{
               overflow: 'hidden',
@@ -137,7 +153,7 @@ const Location = () => {
               justifyContent: 'center',
             }}>
               <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5500831.017276438!2d97.02359890075051!3d18.23731377976752!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae6b005b92b749%3A0xda11b305708aff3b!2sNambiar%20Bannerghatta%20Road!5e0!3m2!1sen!2sin!4v1788591076803!5m2!1sen!2sin" 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62234.34685116743!2d77.550000!3d12.835000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae6b005b92b749%3A0xda11b305708aff3b!2sNambiar%20Bannerghatta%20Road!5e0!3m2!1sen!2sin!4v1788591076803!5m2!1sen!2sin" 
                 className="location-responsive-map" 
                 allowFullScreen="" 
                 loading="lazy" 

@@ -1,15 +1,19 @@
-import { Check, BedDouble } from "lucide-react";
+"use client";
+
+import React from "react";
+import { Check, BedDouble, ArrowRight, Sparkles } from "lucide-react";
 
 const F_SANS = "var(--font-sans), Open Sans, sans-serif";
-const THEME_BLUE = "#3D5915";
-const GOLD = "#6E942A";
+const F_JOST = "var(--font-jost), Montserrat, sans-serif";
 
 const units = [
   {
     type: "4 BHK",
-    subtitle: "VILLA",
+    subtitle: "LUXURY VILLA",
+    tagline: "Contemporary Family Living",
     size: "1,925 Sq. Ft.",
     price: "₹ 4.99 Cr*",
+    priceSub: "Starting At",
     btnText: "GET DETAILS",
     features: [
       "Unlock Pricing & Floor Plans",
@@ -20,9 +24,11 @@ const units = [
   },
   {
     type: "5 BHK",
-    subtitle: "VILLA",
+    subtitle: "PALATIAL VILLA",
+    tagline: "Grandeur & Elite Space",
     size: "2,520 Sq. Ft.",
     price: "Ask For Price",
+    priceSub: "Price on Request",
     btnText: "GET DETAILS",
     features: [
       "Unlock Pricing & Floor Plans",
@@ -33,31 +39,26 @@ const units = [
   }
 ];
 
-const HexShape = ({ color }) => (
-  <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 240 220" preserveAspectRatio="none">
-    <path 
-      d="M 70 218 L 20 170 L 20 50 L 70 2 L 170 2 L 220 50 L 220 170 L 170 218" 
-      fill="white" 
-      stroke={color} 
-      strokeWidth="1.5" 
-      vectorEffect="non-scaling-stroke"
-    />
-  </svg>
-);
-
 const Pricing = ({ setIsOpen }) => {
   return (
     <section
       id="pricing"
-      className="py-16 sm:py-24 px-4 md:px-8 relative overflow-hidden bg-white"
+      className="py-16 sm:py-24 px-4 md:px-8 relative overflow-hidden bg-[#fafcf7]"
     >
-      <div className="max-w-6xl mx-auto relative z-10">
+      {/* Background ambient lighting */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[350px] bg-gradient-to-b from-[#edf6e1]/70 to-transparent blur-3xl pointer-events-none" />
+
+      <div className="max-w-5xl mx-auto relative z-10">
         
         {/* Section Header */}
-        <div className="relative text-center mb-16 md:mb-20" data-aos="fade-up" data-aos-duration="1000"> 
+        <div
+          className="relative text-center mb-14 md:mb-18"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+        > 
           <h2
             className="text-[22px] sm:text-[28px] md:text-[36px] font-semibold leading-tight uppercase tracking-wider text-gray-900"
-            style={{ fontFamily: "var(--font-jost), Montserrat, sans-serif" }}
+            style={{ fontFamily: F_JOST }}
           >
             Configurations & Pricing
           </h2>
@@ -70,74 +71,107 @@ const Pricing = ({ setIsOpen }) => {
           </div>
         </div>
 
-        {/* Pricing Cards */}
-        <div className="relative grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 lg:gap-20 max-w-[760px] mx-auto justify-items-center">
-          
-          {/* Connecting Line (Desktop only) */}
-          <div className="hidden md:block absolute top-[110px] left-[25%] right-[25%] h-[1px] bg-[#d5e0dd] -z-10"></div>
-          {/* Dot on the line between the 2 cards */}
-          <div className="hidden md:block absolute top-[106px] left-1/2 -translate-x-1/2 w-2.5 h-2.5 rounded-full border-[1.5px] border-[#3D5915] bg-white -z-10"></div>
-
+        {/* Minimalist Arch Pedestal Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 max-w-3xl mx-auto items-stretch justify-items-center">
           {units.map((unit, idx) => (
             <div
               key={idx}
               data-aos="fade-up"
               data-aos-duration="1000"
               data-aos-delay={idx * 150}
-              className="flex flex-col items-center relative"
+              className={`w-full max-w-[360px] bg-white rounded-t-[90px] rounded-b-3xl p-8 sm:p-9 flex flex-col items-center relative transition-all duration-400 hover:-translate-y-2 ${
+                unit.isPopular
+                  ? "border-2 border-[#6E942A] shadow-[0_20px_45px_rgba(110,148,42,0.18)] hover:shadow-[0_28px_55px_rgba(110,148,42,0.25)] ring-4 ring-[#6E942A]/10"
+                  : "border border-[#dbe8cd] shadow-[0_12px_32px_rgba(48,64,23,0.06)] hover:shadow-[0_20px_42px_rgba(48,64,23,0.12)]"
+              }`}
             >
-              {/* Hexagon Container */}
-              <div className="relative w-[240px] h-[220px] flex flex-col items-center justify-center p-6 mb-8 bg-white shadow-[0_0_20px_rgba(0,0,0,0.02)]">
-                <HexShape color={unit.isPopular ? GOLD : THEME_BLUE} />
-                
-                {unit.isPopular && (
-                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#6E942A] text-white text-[10px] font-bold px-4 py-1.5 rounded-full whitespace-nowrap z-20 tracking-wider shadow-sm">
-                    MOST PREFERRED
-                  </div>
-                )}
-
-                {/* Icon */}
-                <div className="mb-4 rounded-full bg-gray-50/50 w-12 h-12 flex items-center justify-center relative z-10 border border-gray-100">
-                  <BedDouble size={24} color={unit.isPopular ? GOLD : THEME_BLUE} strokeWidth={1.5} />
+              {/* Popular Crown Tag */}
+              {unit.isPopular && (
+                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#6E942A] via-[#4d6f1a] to-[#6E942A] text-white text-[10.5px] font-extrabold px-5 py-1.5 rounded-full whitespace-nowrap z-20 tracking-wider shadow-md flex items-center gap-1.5 uppercase ring-2 ring-white">
+                  <Sparkles size={11} className="text-yellow-300" />
+                  Most Preferred Choice
                 </div>
-                
-                <h3 className="text-[20px] font-bold text-center leading-tight mb-2 relative z-10 text-gray-800 tracking-wide" style={{ fontFamily: F_SANS }}>
-                  {unit.type} <br /> 
-                  <span className="text-[14px] font-semibold">{unit.subtitle}</span>
-                </h3>
-                <p className="text-[11px] font-bold tracking-widest text-gray-500 relative z-10 uppercase mt-1" style={{ fontFamily: F_SANS }}>
-                  SIZE: <span className="text-gray-700 capitalize font-medium">{unit.size}</span>
-                </p>
+              )}
+
+              {/* Inner Concentric Arch Portal */}
+              <div
+                className={`w-36 h-40 rounded-t-full rounded-b-2xl border flex flex-col items-center justify-center p-4 mb-6 shadow-xs transition-colors ${
+                  unit.isPopular
+                    ? "bg-gradient-to-b from-[#eff8e7] via-[#f7fcf4] to-white border-[#c9e6a3]"
+                    : "bg-gradient-to-b from-[#f5f9f0] via-[#fbfdf9] to-white border-[#d8ecc3]"
+                }`}
+              >
+                {/* Icon */}
+                <div
+                  className={`w-11 h-11 rounded-full flex items-center justify-center mb-2.5 bg-white shadow-xs border ${
+                    unit.isPopular ? "border-[#c1e298] text-[#6E942A]" : "border-[#d5e8c1] text-[#3D5915]"
+                  }`}
+                >
+                  <BedDouble size={20} strokeWidth={1.8} />
+                </div>
+
+                <div
+                  className="text-[26px] font-extrabold leading-none text-gray-900 tracking-tight"
+                  style={{ fontFamily: F_JOST }}
+                >
+                  {unit.type}
+                </div>
+
+                <span className="text-[11px] font-bold text-[#577626] uppercase tracking-widest mt-1">
+                  {unit.subtitle}
+                </span>
               </div>
 
-              {/* Price Section */}
-              <div className="text-center mb-6 h-[70px] flex flex-col justify-end">
-                <p className="text-[10px] text-gray-500 font-bold tracking-widest uppercase mb-1" style={{ fontFamily: F_SANS }}>Starting At</p>
-                <p className={`text-[28px] font-bold ${unit.isPopular ? 'text-[#6E942A]' : 'text-[#3D5915]'}`} style={{ fontFamily: F_SANS }}>
+              {/* Size Pill */}
+              <div className="mb-6 px-4 py-1 rounded-full bg-[#f4f9ee] border border-[#d6e8c0] text-[11.5px] font-bold text-[#2d4212] tracking-wide shadow-xs">
+                📐 Super Built-up: <span className="text-gray-900 font-extrabold">{unit.size}</span>
+              </div>
+
+              {/* Price Pedestal */}
+              <div className="text-center mb-7 w-full py-4 px-4 rounded-2xl bg-gradient-to-b from-[#f9fbf6] to-[#f0f7e8] border border-[#e1ecda]">
+                <span className="text-[10.5px] font-bold uppercase tracking-widest text-[#698444] block mb-1">
+                  {unit.priceSub}
+                </span>
+                <div
+                  className={`text-[29px] sm:text-[32px] font-extrabold leading-none ${
+                    unit.isPopular ? "text-[#5e821f]" : "text-[#2b3f12]"
+                  }`}
+                  style={{ fontFamily: F_JOST }}
+                >
                   {unit.price}
-                </p>
+                </div>
               </div>
 
-              {/* Features */}
-              <div className="flex flex-col gap-3.5 mb-8 w-full max-w-[220px]">
+              {/* Features List with Clean Dividers */}
+              <div className="space-y-3 mb-8 w-full px-1">
                 {unit.features.map((feature, fIdx) => (
-                  <div key={fIdx} className="flex items-start gap-3 text-[13px] text-gray-700 font-medium" style={{ fontFamily: F_SANS }}>
-                    <div className="mt-0.5 flex-shrink-0">
-                      <Check size={16} strokeWidth={3} color={unit.isPopular ? GOLD : THEME_BLUE} />
+                  <div
+                    key={fIdx}
+                    className="flex items-center gap-3 text-[13px] text-gray-700 font-medium"
+                    style={{ fontFamily: F_SANS }}
+                  >
+                    <div className="w-5 h-5 rounded-full bg-[#edf7e2] flex items-center justify-center flex-shrink-0 text-[#6E942A] border border-[#bede96]">
+                      <Check size={12} strokeWidth={3.5} />
                     </div>
                     <span>{feature}</span>
                   </div>
                 ))}
               </div>
 
-              {/* Button */}
+              {/* Minimalist Pill CTA Button */}
               <button
                 onClick={() => setIsOpen(true)}
-                className="w-full max-w-[220px] py-3.5 rounded-md text-[13px] font-bold tracking-wider uppercase transition-all duration-300 shadow-md hover:shadow-lg border-2 cursor-pointer bg-[#3D5915] border-[#3D5915] text-white hover:bg-[#6E942A] hover:border-[#6E942A]"
+                className={`w-full py-3.5 px-6 rounded-full text-[12.5px] font-extrabold tracking-wider uppercase transition-all duration-300 shadow-md hover:shadow-lg cursor-pointer flex items-center justify-center gap-2 ${
+                  unit.isPopular
+                    ? "bg-gradient-to-r from-[#6E942A] to-[#456318] text-white hover:brightness-110 shadow-[#6E942A]/25"
+                    : "bg-white border-2 border-[#3D5915] text-[#3D5915] hover:bg-[#3D5915] hover:text-white"
+                }`}
+                style={{ fontFamily: F_JOST }}
               >
-                {unit.btnText}
+                <span>{unit.btnText}</span>
+                <ArrowRight size={15} />
               </button>
-              
+
             </div>
           ))}
         </div>

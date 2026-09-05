@@ -342,6 +342,9 @@ const Hero = ({ setIsOpen }) => {
           .hero-bullet-text {
             color: #ffffff !important;
           }
+          .hero-mobile-pill {
+            display: none !important;
+          }
         }
 
         /* ─── Tablet ─── */
@@ -381,7 +384,7 @@ const Hero = ({ setIsOpen }) => {
             flex-direction: column !important;
             height: auto !important;
             aspect-ratio: auto;
-            background: transparent !important;
+            background: #f8faf5 !important;
             padding-top: 56px !important;
           }
           .hero-slider-wrapper {
@@ -402,110 +405,190 @@ const Hero = ({ setIsOpen }) => {
             object-fit: cover !important;
             object-position: center !important;
           }
-            .hero-content {
-              position: relative !important;
-              background: transparent !important;
-              padding: 24px 20px 28px !important;
-              z-index: 1;
-            }
-            /* Reset layer badges completely on mobile */
-            .hero-title-badge,
-            .hero-subtitle-badge {
-              background: transparent !important;
-              border: none !important;
-              border-radius: 0 !important;
-              padding: 0 !important;
-              box-shadow: none !important;
-              backdrop-filter: none !important;
-              -webkit-backdrop-filter: none !important;
-              display: inline-block !important;
-            }
-            .hero-bullet-item,
-            .hero-bullet-badge {
-              display: flex !important;
-              align-items: center !important;
-              gap: 8px !important;
-              padding: 0 !important;
-              background: transparent !important;
-              border: none !important;
-              border-radius: 0 !important;
-              box-shadow: none !important;
-              backdrop-filter: none !important;
-              -webkit-backdrop-filter: none !important;
-              width: 100% !important;
-            }
-            /* Removed leaf overlay */
-            .hero-overlay {
-              display: none !important;
-            }
-            .hero-title {
-              color: #6E942A !important;
-              text-shadow: none !important;
-            }
-            .hero-subtitle, .hero-price-line, .hero-bullet-text, .hero-price-digits {
-              color: #1A2024 !important;
-              text-shadow: none !important;
-            }
-            .hero-price-badge {
-              padding: 5px 18px 5px 14px !important;
-              gap: 10px !important;
-            }
-            .hero-price-leaf {
-              width: 24px !important;
-              height: 24px !important;
-            }
-            .hero-price-badge .hero-price-amt {
-              font-size: 20px !important;
-              color: #ffffff !important;
-            }
-            .hero-subtitle {
-              font-size: 16px !important;
-            }
-            .hero-price-line {
-              font-size: 17px !important;
-            }
-            .hero-subtitle span {
-              color: #1A2024 !important;
-              opacity: 0.9;
-            }
-            .hero-bullet-item svg {
-              background-color: rgba(0,0,0,0.05) !important;
-              stroke: #6E942A !important;
-            }
-            .hero-cta-row {
-              flex-direction: column !important;
-              align-items: center !important;
-              gap: 12px !important;
-              width: 100%;
-            }
-            .hero-cta-row > button,
-            .hero-cta-row > a {
-              width: 100% !important;
-              justify-content: center !important;
-              text-align: center;
-              padding: 12px 10px !important;
-              font-size: 14px !important;
-              white-space: normal !important;
-              box-shadow: none !important;
-            }
-            .hero-cta-row > a.btn-brand,
-            .hero-cta-row > button.btn-brand {
-              background: #6E942A !important;
-              color: #ffffff !important;
-              border-color: transparent !important;
-              font-weight: 800 !important;
-            }
-            .hero-cta-row .hero-btn-one {
-              color: #3D5915 !important;
-              border-color: #3D5915 !important;
-              background: transparent !important;
-            }
-            .hero-rera {
-              font-size: 10px !important;
-              color: rgba(0,0,0,0.7) !important;
-            }
+          .hero-content {
+            position: relative !important;
+            background: #ffffff !important;
+            border-top-left-radius: 28px !important;
+            border-top-right-radius: 28px !important;
+            margin-top: -24px !important;
+            padding: 24px 18px 28px !important;
+            z-index: 10 !important;
+            box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.08) !important;
+            display: flex !important;
+            flex-direction: column !important;
           }
-        `}} />
+          .hero-mobile-pill {
+            display: inline-flex !important;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 12px;
+            border-radius: 9999px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            background: #edf7e2;
+            color: #2f4614;
+            border: 1px solid #b2db84;
+            box-shadow: 0 2px 6px rgba(110, 148, 42, 0.12);
+            margin-bottom: 10px;
+            width: fit-content;
+          }
+          /* Reset layer badges completely on mobile */
+          .hero-title-badge,
+          .hero-subtitle-badge {
+            background: transparent !important;
+            border: none !important;
+            border-radius: 0 !important;
+            padding: 0 !important;
+            box-shadow: none !important;
+            backdrop-filter: none !important;
+            -webkit-backdrop-filter: none !important;
+            display: block !important;
+          }
+          /* Removed leaf overlay */
+          .hero-overlay {
+            display: none !important;
+          }
+          .hero-title {
+            font-size: 24px !important;
+            font-weight: 800 !important;
+            color: #243810 !important;
+            text-shadow: none !important;
+            margin: 0 0 4px !important;
+            line-height: 1.15 !important;
+          }
+          .hero-subtitle {
+            font-size: 13.5px !important;
+            font-weight: 600 !important;
+            color: #4a632b !important;
+            text-shadow: none !important;
+            margin: 0 0 16px !important;
+            line-height: 1.4 !important;
+          }
+          .hero-subtitle span {
+            color: #4a632b !important;
+            opacity: 1 !important;
+          }
+          /* 2x2 Feature Micro-Cards */
+          .hero-bullets {
+            display: grid !important;
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 10px !important;
+            margin-bottom: 16px !important;
+            width: 100% !important;
+          }
+          .hero-bullet-item,
+          .hero-bullet-badge {
+            display: flex !important;
+            align-items: center !important;
+            gap: 8px !important;
+            padding: 10px 10px !important;
+            background: #f4f9ed !important;
+            border: 1px solid #d8ecc3 !important;
+            border-radius: 14px !important;
+            box-shadow: 0 2px 6px rgba(48, 64, 23, 0.04) !important;
+            width: 100% !important;
+            backdrop-filter: none !important;
+            -webkit-backdrop-filter: none !important;
+            text-align: left !important;
+          }
+          .hero-bullet-item svg {
+            width: 18px !important;
+            height: 18px !important;
+            background-color: #ffffff !important;
+            border: 1.5px solid #6E942A !important;
+            border-radius: 50% !important;
+            padding: 2.5px !important;
+            flex-shrink: 0 !important;
+            stroke: #6E942A !important;
+          }
+          .hero-bullet-text {
+            font-size: 12px !important;
+            font-weight: 600 !important;
+            color: #253910 !important;
+            line-height: 1.35 !important;
+            text-shadow: none !important;
+          }
+          /* Price Card Container */
+          .hero-price-line {
+            background: linear-gradient(135deg, #f9fcf5 0%, #edf7e2 100%) !important;
+            border: 1.5px dashed #9bc868 !important;
+            border-radius: 18px !important;
+            padding: 12px 14px !important;
+            margin: 0 0 16px !important;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            gap: 8px !important;
+            font-size: 13.5px !important;
+            font-weight: 600 !important;
+            color: #2c4114 !important;
+            box-shadow: 0 3px 10px rgba(110, 148, 42, 0.08) !important;
+            text-shadow: none !important;
+            text-align: center !important;
+          }
+          .hero-price-title {
+            font-size: clamp(12px, 3.5vw, 14.5px) !important;
+            white-space: nowrap !important;
+            display: block !important;
+          }
+          .hero-price-line br {
+            display: none !important;
+          }
+          .hero-price-badge {
+            padding: 6px 20px 6px 16px !important;
+            gap: 10px !important;
+          }
+          .hero-price-leaf {
+            width: 24px !important;
+            height: 24px !important;
+          }
+          .hero-price-badge .hero-price-amt {
+            font-size: 20px !important;
+            color: #ffffff !important;
+          }
+          /* CTA Buttons */
+          .hero-cta-row {
+            flex-direction: column !important;
+            align-items: center !important;
+            gap: 10px !important;
+            width: 100% !important;
+            margin-top: 0 !important;
+          }
+          .hero-cta-row > button,
+          .hero-cta-row > a {
+            width: 100% !important;
+            justify-content: center !important;
+            text-align: center !important;
+            padding: 13px 16px !important;
+            font-size: 13.5px !important;
+            font-weight: 700 !important;
+            white-space: normal !important;
+            border-radius: 50px !important;
+            display: flex !important;
+            align-items: center !important;
+            gap: 8px !important;
+          }
+          .hero-cta-row .hero-btn-one {
+            color: #304017 !important;
+            border: 1.5px solid #304017 !important;
+            background: #ffffff !important;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.04) !important;
+          }
+          .hero-cta-row > a.btn-brand,
+          .hero-cta-row > button.btn-brand {
+            background: linear-gradient(135deg, #6E942A 0%, #4d6c19 100%) !important;
+            color: #ffffff !important;
+            border: none !important;
+            box-shadow: 0 4px 14px rgba(110, 148, 42, 0.35) !important;
+          }
+          .hero-rera {
+            font-size: 10px !important;
+            color: rgba(0,0,0,0.7) !important;
+          }
+        }
+      `}} />
 
       {/* ── Responsive Image Carousel (All Devices) ── */}
       <div className="hero-slider-wrapper grid">
@@ -549,6 +632,11 @@ const Hero = ({ setIsOpen }) => {
       {/* ── Content overlay ── */}
       <div className="hero-content">
 
+        {/* Mobile Luxury Pre-Launch Pill */}
+        <div className="hero-mobile-pill">
+          <span>✨</span> Exclusive Pre-Launch
+        </div>
+
         {/* Main Heading */}
         <h1 className="hero-title">
           <span className="hero-title-badge">
@@ -559,7 +647,7 @@ const Hero = ({ setIsOpen }) => {
         {/* Subtitle */}
         <p className="hero-subtitle">
           <span className="hero-subtitle-badge" style={{ fontSize: '0.9em', fontWeight: 600, textTransform: 'none' }}>
-            Pre Launch At Bannerghatta Road, Bangalore.
+            At Bannerghatta Road, Bangalore.
           </span>
         </p>
         
@@ -605,12 +693,10 @@ const Hero = ({ setIsOpen }) => {
 
         {/* Price Line */}
         <p className="hero-price-line w-full text-center lg:text-left" style={{ marginBottom: '0px' }}>
-          Luxury 4 & 5 BHK Villas
-          <span style={{ marginLeft: '6px', marginRight: '6px' }}>
-            Price Starts
+          <span className="hero-price-title whitespace-nowrap">
+            Luxury 4 & 5 BHK Villas Price Starts
           </span>
-          <br className="block lg:hidden" />
-          <span className="hero-price-badge mt-2 lg:mt-0">
+          <span className="hero-price-badge mt-2 lg:mt-0 lg:ml-3">
             <img 
               src="/leaf-transparent.png" 
               alt="Leaf" 
