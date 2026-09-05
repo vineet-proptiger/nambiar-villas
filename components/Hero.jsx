@@ -300,6 +300,10 @@ const Hero = ({ setIsOpen }) => {
             border: 1px solid rgba(255, 255, 255, 0.14);
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
             width: fit-content;
+            color: #ffffff;
+          }
+          .hero-bullet-text {
+            color: #ffffff !important;
           }
         }
 
