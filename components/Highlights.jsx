@@ -34,19 +34,15 @@ const Highlights = ({ setIsOpen }) => {
 
           {/* Highlight 2: Spacious Units */}
           <div className="highlight-card gradient-green p-6 sm:p-7 rounded-2xl bg-[#eefcee] border-none shadow-md transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl flex flex-col items-center text-center" style={{ animation: '0.6s ease-out 0.1s 1 normal both running fadeInScale' }}>
-            <div className="flex gap-4">
-              <div className="flex-shrink-0 mt-1">
-                <svg className="w-8 h-8 text-[#6E942A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
-                </svg>
+              <div className="icon-float mb-4 relative" style={{ animation: 'float 3s ease-in-out infinite', animationDelay: '0.2s' }}>
+                  <svg className="w-9 h-9 text-[#6E942A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                  </svg>
               </div>
-              <div>
-                <h3 className="text-[18px] sm:text-[19px] font-bold mb-2 text-gray-900" style={{ fontFamily: "var(--font-jost), Montserrat, sans-serif" }}>Spacious Units from 1,925 sq.ft.</h3>
-                <p className="text-[15px] sm:text-[16px] text-gray-600 leading-relaxed" style={{ fontFamily: "var(--font-sans), Open Sans, sans-serif" }}>
+              <h3 className="text-[18px] sm:text-[19px] font-bold mb-2 text-gray-900" style={{ fontFamily: "var(--font-jost), Montserrat, sans-serif" }}>Spacious Units from 1,925 sq.ft.</h3>
+              <p className="text-gray-600 text-[13.5px] sm:text-[14.5px] leading-[1.65]">
                   Experience grand living spaces starting from 1,925 sq.ft. onwards, thoughtfully designed to maximize natural light and ensure cross-ventilation.
-                </p>
-              </div>
-            </div>
+              </p>
           </div>
 
           {/* Highlight 3: Trusted Developer */}
