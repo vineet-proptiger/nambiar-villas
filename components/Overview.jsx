@@ -38,131 +38,133 @@ const Overview = ({ setIsOpen }) => {
     `}</style>
 
     <div className="container mx-auto px-4 sm:px-8 max-w-[1300px] relative z-10">
-      <div className="flex flex-col lg:flex-row items-center">
+      
+      {/* Section Header - Spanning across top */}
+      <div className="mb-6 sm:mb-8" data-aos="fade-up" data-aos-duration="1000">
+        <h2 className="text-[22px] sm:text-[28px] md:text-[36px] font-semibold leading-tight uppercase tracking-wider text-gray-900" style={{ fontFamily: "var(--font-jost), Montserrat, sans-serif", marginBottom: '6px' }}>Nambiar Luxury Villas</h2>
+        {/* Decorative Line */}
+        <div className="flex items-center justify-start mt-1 mb-3">
+          <div className="w-16 h-[1px] bg-[#6E942A]"></div>
+          <div className="w-2 h-2 rounded-full bg-[#6E942A] mx-3"></div>
+          <div className="w-16 h-[1px] bg-[#6E942A]"></div>
+        </div>
+        <h3 className="text-[16px] sm:text-[18px] md:text-[22px] font-medium tracking-wide text-gray-600" style={{ fontFamily: "var(--font-jost), Montserrat, sans-serif" }}>Premium Villas in Bannerghatta Road, Bangalore</h3>
+      </div>
+
+      <div className="flex flex-col lg:flex-row items-stretch gap-6 lg:gap-8">
         
-        {/* Left Side: Text Content */}
-        <div className="w-full lg:w-7/12 pr-0 lg:pr-8">
-          <div className="inner-section" data-aos="fade-up" data-aos-duration="1000">
-            <h2 className="text-[22px] sm:text-[28px] md:text-[36px] font-semibold leading-tight uppercase tracking-wider text-gray-900" data-aos="fade-up" data-aos-duration="1000" style={{ fontFamily: "var(--font-jost), Montserrat, sans-serif", marginBottom: '6px' }}>Nambiar Luxury Villas</h2>
-            {/* Decorative Line */}
-            <div className="flex items-center justify-start mt-1 mb-3" data-aos="fade-up" data-aos-duration="1000">
-              <div className="w-16 h-[1px] bg-[#0E4429]"></div>
-              <div className="w-2 h-2 rounded-full bg-[#0E4429] mx-3"></div>
-              <div className="w-16 h-[1px] bg-[#0E4429]"></div>
+        {/* Left Side: Green Box (Paragraph + 4 Info Boxes) */}
+        <div className="w-full lg:w-7/12 flex flex-col" data-aos="fade-up" data-aos-duration="1000">
+          <div 
+            className="relative p-6 sm:p-8 rounded-2xl shadow-[0_12px_36px_rgba(48,64,23,0.18)] overflow-hidden flex-1 flex flex-col justify-between" 
+            style={{ background: '#304017' }}
+          >
+            <div style={isExpanded ? {} : { display: '-webkit-box', WebkitLineClamp: '7', WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+              <p style={{ fontSize: '15.5px', fontFamily: '"Poppins", sans-serif', color: '#E5EDDC', textAlign: 'justify', lineHeight: '1.85', margin: 0 }}>
+                <span 
+                  style={{ 
+                    float: 'left', 
+                    fontSize: '3.6rem', 
+                    lineHeight: '0.8', 
+                    fontWeight: '800', 
+                    color: '#95B325', 
+                    marginRight: '12px', 
+                    marginTop: '4px',
+                    fontFamily: "var(--font-jost), Montserrat, sans-serif" 
+                  }}
+                >
+                  N
+                </span>
+                <span style={{ fontWeight: '700', color: '#FFFFFF' }}>ambiar Bannerghatta Villas</span> is a premium villa development by Nambiar Group located at Bannerghatta Road in South Bangalore. The project is presented as a spacious villa township with Phase 1 covering 32+ acres and a total of 198 exclusive villas. The development offers premium villas with spacious layouts, contemporary architecture and dedicated plot areas. The project highlights approximately 80% open space and a 70,000 sq. ft. clubhouse, creating a low-density residential environment with extensive landscaped surroundings.
+                
+                <button 
+                  onClick={() => setIsExpanded(!isExpanded)}
+                  className="text-[#95B325] hover:text-[#b4e03c] font-bold inline-flex items-center gap-1 transition-colors cursor-pointer ml-2"
+                  style={{ fontSize: '15px' }}
+                >
+                  {isExpanded ? 'Read Less' : 'Read More'}
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className={`transform transition-transform ${isExpanded ? 'rotate-180' : ''}`}>
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </button>
+              </p>
             </div>
-            <h3 className="text-[16px] sm:text-[18px] md:text-[22px] font-medium tracking-wide text-gray-600" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="50" style={{ fontFamily: "var(--font-jost), Montserrat, sans-serif", marginBottom: '24px' }}>Premium Villas in Bannerghatta Road, Bangalore</h3>
-            
-            <div className="relative pl-5 sm:pl-7 mb-8" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
-              {/* Left vertical gradient line */}
-              <div 
-                className="absolute left-0 top-1 bottom-1 w-[3px] rounded-full" 
-                style={{ 
-                  background: 'linear-gradient(180deg, #0E4429 0%, #0E4429 60%, rgba(14, 68, 41, 0.05) 100%)' 
-                }} 
-              />
+
+            {/* Info Boxes inside the background container */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6 sm:mt-8 pt-6 border-t border-[#95B325]/20">
               
-              <div style={isExpanded ? {} : { display: '-webkit-box', WebkitLineClamp: '7', WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
-                <p style={{ fontSize: '16px', fontFamily: '"Poppins", sans-serif', color: '#333', textAlign: 'justify', lineHeight: '1.85', margin: 0 }}>
-                  <span 
-                    style={{ 
-                      float: 'left', 
-                      fontSize: '3.6rem', 
-                      lineHeight: '0.8', 
-                      fontWeight: '800', 
-                      color: '#0E4429', 
-                      marginRight: '10px', 
-                      marginTop: '4px',
-                      fontFamily: "var(--font-jost), Montserrat, sans-serif" 
-                    }}
-                  >
-                    N
-                  </span>
-                  <span style={{ fontWeight: '700', color: '#1A2024' }}>ambiar Bannerghatta Villas</span> is a premium villa development by Nambiar Group located at Bannerghatta Road in South Bangalore. The project is presented as a spacious villa township with Phase 1 covering 32+ acres and a total of 198 exclusive villas. The development offers premium villas with spacious layouts, contemporary architecture and dedicated plot areas. The project highlights approximately 80% open space and a 70,000 sq. ft. clubhouse, creating a low-density residential environment with extensive landscaped surroundings.
-                  
-                  <button 
-                    onClick={() => setIsExpanded(!isExpanded)}
-                    className="text-[#C59A3F] font-bold inline-flex items-center gap-1 hover:text-[#A57C2B] transition-colors cursor-pointer ml-2"
-                    style={{ fontSize: '15px' }}
-                  >
-                    {isExpanded ? 'Read Less' : 'Read More'}
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className={`transform transition-transform ${isExpanded ? 'rotate-180' : ''}`}>
-                      <polyline points="6 9 12 15 18 9"></polyline>
-                    </svg>
-                  </button>
-                </p>
-              </div>
-            </div>
-            
-            {/* Info Boxes (Outside of the read more collapse) */}
-            <div className="grid grid-cols-2 gap-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-              
-              {/* Box 1 */}
-              <div className="flex items-center gap-3 p-3 sm:p-4 bg-white border border-gray-200 rounded-md shadow-sm">
+              {/* Box 1: Land Parcel */}
+              <div className="flex items-center gap-4 p-4 sm:p-5 bg-white rounded-xl sm:rounded-2xl shadow-sm hover:shadow-md transition-shadow">
                 <div className="flex-shrink-0">
-                  <svg className="w-7 h-7 sm:w-8 sm:h-8 text-[#0E4429]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                  <svg className="w-8 h-8 sm:w-9 sm:h-9 text-[#3D5916]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M12 21c-4.97-4.97-8-8.58-8-12a8 8 0 1 1 16 0c0 3.42-3.03 7.03-8 12z" />
+                    <circle cx="12" cy="9" r="3" />
                   </svg>
                 </div>
                 <div className="flex flex-col">
-                  <span style={{ fontFamily: "var(--font-jost), Montserrat, sans-serif" }} className="text-[17px] sm:text-[20px] font-bold text-[#0E4429] leading-tight">70 Acres</span>
-                  <span style={{ fontFamily: "var(--font-sans), Open Sans, sans-serif" }} className="text-[12px] sm:text-[14px] color-[#666] leading-snug text-gray-500">Land Parcel</span>
+                  <span style={{ fontFamily: "var(--font-jost), Montserrat, sans-serif" }} className="text-[20px] sm:text-[23px] font-bold text-[#3D5916] leading-tight">70 Acres</span>
+                  <span style={{ fontFamily: "var(--font-sans), Open Sans, sans-serif" }} className="text-[13px] sm:text-[14px] text-gray-500 font-medium leading-normal mt-0.5">Land Parcel</span>
                 </div>
               </div>
 
-              {/* Box 2 */}
-              <div className="flex items-center gap-3 p-3 sm:p-4 bg-white border border-gray-200 rounded-md shadow-sm">
+              {/* Box 2: Total Villas */}
+              <div className="flex items-center gap-4 p-4 sm:p-5 bg-white rounded-xl sm:rounded-2xl shadow-sm hover:shadow-md transition-shadow">
                 <div className="flex-shrink-0">
-                  <svg className="w-7 h-7 sm:w-8 sm:h-8 text-[#0E4429]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                  <svg className="w-8 h-8 sm:w-9 sm:h-9 text-[#3D5916]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M4 21V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v16" />
+                    <path d="M9 8h2" />
+                    <path d="M13 8h2" />
+                    <path d="M9 12h2" />
+                    <path d="M13 12h2" />
+                    <path d="M10 21v-4a2 2 0 0 1 4 0v4" />
                   </svg>
                 </div>
                 <div className="flex flex-col">
-                  <span style={{ fontFamily: "var(--font-jost), Montserrat, sans-serif" }} className="text-[17px] sm:text-[20px] font-bold text-[#0E4429] leading-tight">296</span>
-                  <span style={{ fontFamily: "var(--font-sans), Open Sans, sans-serif" }} className="text-[12px] sm:text-[14px] color-[#666] leading-snug text-gray-500">Total Villas</span>
+                  <span style={{ fontFamily: "var(--font-jost), Montserrat, sans-serif" }} className="text-[20px] sm:text-[23px] font-bold text-[#3D5916] leading-tight">296</span>
+                  <span style={{ fontFamily: "var(--font-sans), Open Sans, sans-serif" }} className="text-[13px] sm:text-[14px] text-gray-500 font-medium leading-normal mt-0.5">Total Villas</span>
                 </div>
               </div>
 
-              {/* Box 3 */}
-              <div className="flex items-center gap-3 p-3 sm:p-4 bg-white border border-gray-200 rounded-md shadow-sm">
+              {/* Box 3: Open Space */}
+              <div className="flex items-center gap-4 p-4 sm:p-5 bg-white rounded-xl sm:rounded-2xl shadow-sm hover:shadow-md transition-shadow">
                 <div className="flex-shrink-0">
-                  <svg className="w-7 h-7 sm:w-8 sm:h-8 text-[#0E4429]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path>
+                  <svg className="w-8 h-8 sm:w-9 sm:h-9 text-[#3D5916]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9z" />
                   </svg>
                 </div>
                 <div className="flex flex-col">
-                  <span style={{ fontFamily: "var(--font-jost), Montserrat, sans-serif" }} className="text-[17px] sm:text-[20px] font-bold text-[#0E4429] leading-tight">80%</span>
-                  <span style={{ fontFamily: "var(--font-sans), Open Sans, sans-serif" }} className="text-[12px] sm:text-[14px] color-[#666] leading-snug text-gray-500">Open Space</span>
+                  <span style={{ fontFamily: "var(--font-jost), Montserrat, sans-serif" }} className="text-[20px] sm:text-[23px] font-bold text-[#3D5916] leading-tight">80%</span>
+                  <span style={{ fontFamily: "var(--font-sans), Open Sans, sans-serif" }} className="text-[13px] sm:text-[14px] text-gray-500 font-medium leading-normal mt-0.5">Open Space</span>
                 </div>
               </div>
 
-              {/* Box 4 */}
-              <div className="flex items-center gap-3 p-3 sm:p-4 bg-white border border-gray-200 rounded-md shadow-sm">
+              {/* Box 4: Clubhouse */}
+              <div className="flex items-center gap-4 p-4 sm:p-5 bg-white rounded-xl sm:rounded-2xl shadow-sm hover:shadow-md transition-shadow">
                 <div className="flex-shrink-0">
-                  <svg className="w-7 h-7 sm:w-8 sm:h-8 text-[#0E4429]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z M15 9a3 3 0 11-6 0 3 3 0 016 0z M9 21h6"></path>
+                  <svg className="w-8 h-8 sm:w-9 sm:h-9 text-[#3D5916]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="9" />
+                    <circle cx="12" cy="12" r="3.5" />
                   </svg>
                 </div>
                 <div className="flex flex-col">
-                  <span style={{ fontFamily: "var(--font-jost), Montserrat, sans-serif" }} className="text-[17px] sm:text-[20px] font-bold text-[#0E4429] leading-tight">70,000 Sq.Ft.</span>
-                  <span style={{ fontFamily: "var(--font-sans), Open Sans, sans-serif" }} className="text-[12px] sm:text-[14px] color-[#666] leading-snug text-gray-500">Clubhouse</span>
+                  <span style={{ fontFamily: "var(--font-jost), Montserrat, sans-serif" }} className="text-[20px] sm:text-[23px] font-bold text-[#3D5916] leading-tight">70,000 Sq.Ft.</span>
+                  <span style={{ fontFamily: "var(--font-sans), Open Sans, sans-serif" }} className="text-[13px] sm:text-[14px] text-gray-500 font-medium leading-normal mt-0.5">Clubhouse</span>
                 </div>
               </div>
 
             </div>
-
           </div>
         </div>
 
-        {/* Right Side: Image */}
-        <div className="w-full lg:w-5/12 mt-10 lg:mt-0" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
-          <div className="image_caption_wrap relative overflow-hidden rounded-xl shadow-lg border border-[#C59A3F]/20 bg-white">
+        {/* Right Side: Image starting at the exact same height */}
+        <div className="w-full lg:w-5/12 flex flex-col" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+          <div className="image_caption_wrap relative overflow-hidden rounded-2xl shadow-lg border border-[#6E942A]/20 bg-white flex-1 min-h-[380px] sm:min-h-[480px]">
             <Image
               src={overviewImage}
               alt="Nambiar Luxury Villas - Tower Elevation"
-              width={1500}
-              height={1364}
-              className="w-full h-auto object-cover rounded-xl transition-transform duration-700 hover:scale-105"
+              fill
+              sizes="(max-width: 1024px) 100vw, 42vw"
+              className="object-cover rounded-2xl transition-transform duration-700 hover:scale-105"
               priority={true}
             />
           </div>

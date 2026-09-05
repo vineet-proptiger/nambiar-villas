@@ -30,16 +30,16 @@ const Location = () => {
         {/* Section Header */}
         <div style={{ marginBottom: '50px', textAlign: 'center' }} data-aos="fade-down" data-aos-duration="1000">
            <h2
-             className="text-[22px] sm:text-[28px] md:text-[36px] font-semibold leading-tight uppercase tracking-wider text-[#C59A3F]"
+             className="text-[22px] sm:text-[28px] md:text-[36px] font-semibold leading-tight uppercase tracking-wider text-[#6E942A]"
              style={{ fontFamily: "var(--font-jost), Montserrat, sans-serif", marginBottom: '12px' }}
            >
              LOCATION ADVANTAGES
            </h2>
            {/* Decorative Line */}
            <div className="flex items-center justify-center mt-3 mb-2">
-             <div className="w-16 h-[1px] bg-[#0E4429]"></div>
-             <div className="w-2 h-2 rounded-full bg-[#0E4429] mx-3"></div>
-             <div className="w-16 h-[1px] bg-[#0E4429]"></div>
+             <div className="w-16 h-[1px] bg-[#6E942A]"></div>
+             <div className="w-2 h-2 rounded-full bg-[#6E942A] mx-3"></div>
+             <div className="w-16 h-[1px] bg-[#6E942A]"></div>
            </div>
         </div>
 
@@ -51,7 +51,7 @@ const Location = () => {
               padding: '16px 26px',
               borderRadius: '16px',
               background: '#F8F9FA',
-              border: '1px solid #C59A3F',
+              border: '1px solid #95B325',
               boxShadow: '0 12px 32px rgba(0, 2, 66, 0.12)',
               display: 'flex',
               flexDirection: 'column',
@@ -66,12 +66,12 @@ const Location = () => {
                 textTransform: 'uppercase',
                 marginBottom: '10px',
                 paddingBottom: '10px',
-                borderBottom: '2px solid #C59A3F',
+                borderBottom: '2px solid #6E942A',
                 display: 'flex',
                 alignItems: 'center',
                 gap: '10px'
               }}>
-                <MapPin size={22} className="text-[#0E4429]" />
+                <MapPin size={22} className="text-[#3D5915]" />
                 <span>SEAMLESS CONNECTIVITY</span>
               </h3>
 
@@ -84,7 +84,7 @@ const Location = () => {
                       alignItems: 'center',
                       justifyContent: 'space-between',
                       padding: '7px 4px',
-                      borderBottom: index === locationLandmarks.length - 1 ? 'none' : '1px solid rgba(213, 189, 126, 0.45)',
+                      borderBottom: index === locationLandmarks.length - 1 ? 'none' : '1px solid rgba(110, 148, 42, 0.2)',
                       fontFamily: F_SANS,
                     }}
                   >
@@ -93,7 +93,7 @@ const Location = () => {
                         width: '6px',
                         height: '6px',
                         borderRadius: '2px',
-                        background: '#0E4429',
+                        background: '#6E942A',
                         display: 'inline-block',
                         flexShrink: 0,
                       }} />
@@ -125,13 +125,13 @@ const Location = () => {
           <div className="w-full lg:flex-1 lg:order-1 flex flex-col justify-center" data-aos="fade-right" data-aos-duration="1000">
             <div style={{
               overflow: 'hidden',
-              border: '1px solid #DFB76C',
+              border: '1px solid #95B325',
               borderRadius: '16px',
               width: '100%',
               height: '100%',
               position: 'relative',
-              background: '#0E4429',
-              boxShadow: '0 12px 32px rgba(14, 68, 41, 0.18)',
+              background: '#3D5915',
+              boxShadow: '0 12px 32px rgba(61, 89, 21, 0.18)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
@@ -159,7 +159,7 @@ const Location = () => {
               `}</style>
               <div style={{
                 position: 'absolute', bottom: '16px', left: '16px', zIndex: 10,
-                background: 'var(--color-gold, #C59A3F)', opacity: 0.95, backdropFilter: 'blur(6px)',
+                background: 'var(--color-gold, #6E942A)', opacity: 0.95, backdropFilter: 'blur(6px)',
                 borderRadius: '8px', padding: '6px 14px',
                 display: 'flex', alignItems: 'center', gap: '6px',
                 pointerEvents: 'none',

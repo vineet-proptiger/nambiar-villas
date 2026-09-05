@@ -120,19 +120,19 @@ const Gallery = ({ setIsOpen }) => {
                 fontSize: '12px',
                 fontWeight: '700',
                 letterSpacing: '0.15em',
-                color: '#684C1B',
-                border: '1px solid #DFB76C',
+                color: '#3D5915',
+                border: '1px solid #95B325',
                 padding: '14px 36px',
                 background: 'transparent',
                 cursor: 'pointer',
               }}
               onMouseEnter={e => {
-                e.currentTarget.style.background = '#684C1B'
+                e.currentTarget.style.background = '#3D5915'
                 e.currentTarget.style.color = '#fff'
               }}
               onMouseLeave={e => {
                 e.currentTarget.style.background = 'transparent'
-                e.currentTarget.style.color = '#684C1B'
+                e.currentTarget.style.color = '#3D5915'
               }}
             >
               {showAll ? 'SHOW LESS' : 'VIEW ALL GALLERY'}

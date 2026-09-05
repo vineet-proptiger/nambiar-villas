@@ -97,13 +97,13 @@ const Hero = ({ setIsOpen }) => {
 
         @keyframes livepulse {
           0%  { box-shadow:0 0 0 0 rgba(212,175,55,0.6); }
-          70% { box-shadow:0 0 0 6px rgba(212,175,55,0); }
-          100%{ box-shadow:0 0 0 0 rgba(212,175,55,0); }
+          70% { box-shadow:0 0 0 6px rgba(110,148,42,0); }
+          100%{ box-shadow:0 0 0 0 rgba(110,148,42,0); }
         }
         @keyframes textBling {
-          0% { opacity: 0.7; text-shadow: 0 0 4px rgba(212,175,55,0.5); }
-          50% { opacity: 1; text-shadow: 0 0 14px rgba(212,175,55,1); }
-          100% { opacity: 0.7; text-shadow: 0 0 4px rgba(212,175,55,0.5); }
+          0% { opacity: 0.7; text-shadow: 0 0 4px rgba(110,148,42,0.5); }
+          50% { opacity: 1; text-shadow: 0 0 14px rgba(110,148,42,1); }
+          100% { opacity: 0.7; text-shadow: 0 0 4px rgba(110,148,42,0.5); }
         }
 
         @keyframes heroPriceBlink {
@@ -338,7 +338,7 @@ const Hero = ({ setIsOpen }) => {
               display: none !important;
             }
             .hero-title {
-              color: #C59A3F !important;
+              color: #6E942A !important;
               text-shadow: none !important;
             }
             .hero-subtitle, .hero-price-line, .hero-price-amt, .hero-bullet-text, .hero-price-digits {
@@ -357,7 +357,7 @@ const Hero = ({ setIsOpen }) => {
             }
             .hero-bullet-item svg {
               background-color: rgba(0,0,0,0.05) !important;
-              stroke: #C59A3F !important;
+              stroke: #6E942A !important;
             }
             .hero-cta-row {
               flex-direction: column !important;
@@ -377,14 +377,14 @@ const Hero = ({ setIsOpen }) => {
             }
             .hero-cta-row > a.btn-brand,
             .hero-cta-row > button.btn-brand {
-              background: #C59A3F !important;
-              color: #111827 !important;
+              background: #6E942A !important;
+              color: #ffffff !important;
               border-color: transparent !important;
               font-weight: 800 !important;
             }
             .hero-cta-row .hero-btn-one {
-              color: #0E4429 !important;
-              border-color: #0E4429 !important;
+              color: #3D5915 !important;
+              border-color: #3D5915 !important;
               background: transparent !important;
             }
             .hero-rera {
@@ -438,27 +438,73 @@ const Hero = ({ setIsOpen }) => {
 
         {/* Main Heading */}
         <h1 className="hero-title">
-         Nambiar Luxury Villas
+          <span 
+            style={{
+              display: 'inline-block',
+              background: 'rgba(20, 28, 10, 0.58)',
+              backdropFilter: 'blur(8px)',
+              WebkitBackdropFilter: 'blur(8px)',
+              padding: '6px 18px',
+              borderRadius: '12px',
+              border: '1px solid rgba(255, 255, 255, 0.15)',
+              boxShadow: '0 4px 16px rgba(0, 0, 0, 0.3)'
+            }}
+          >
+            Nambiar Luxury Villas
+          </span>
         </h1>
 
         {/* Subtitle */}
         <p className="hero-subtitle">
-          <span style={{ fontSize: '0.9em', fontWeight: 600, textTransform: 'none', color: '#fff' }}>New Launch At Bannerghatta Road, Bangalore.</span>
+          <span 
+            style={{ 
+              display: 'inline-block',
+              background: 'rgba(20, 28, 10, 0.52)',
+              backdropFilter: 'blur(8px)',
+              WebkitBackdropFilter: 'blur(8px)',
+              padding: '5px 16px',
+              borderRadius: '30px',
+              border: '1px solid rgba(255, 255, 255, 0.14)',
+              fontSize: '0.9em', 
+              fontWeight: 600, 
+              textTransform: 'none', 
+              color: '#fff',
+              boxShadow: '0 4px 12px rgba(0, 0, 0, 0.25)'
+            }}
+          >
+            Pre Launch At Bannerghatta Road, Bangalore.
+          </span>
         </p>
         
-        {/* Bullet Points */}
+        {/* Bullet Points with Backdrop Layer */}
         <div className="hero-bullets" style={{ marginBottom: '24px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
           {[
             "Premium 4 & 5 BHK Luxury Villas",
             "Spread Across 70 Acres of Lush Greenery",
-            "Exclusive New Launch on Bannerghatta Road",
+            "Exclusive Pre Launch on Bannerghatta Road",
             "Resort-Style Lifestyle with 40+ Amenities"
           ].map((text, i) => (
-          <div key={i} className="hero-bullet-item" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-brand, #C59A3F)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, backgroundColor: '#fff', borderRadius: '50%', padding: '2px' }}>
+          <div 
+            key={i} 
+            className="hero-bullet-item" 
+            style={{ 
+              display: 'inline-flex', 
+              alignItems: 'center', 
+              gap: '10px',
+              width: 'fit-content',
+              background: 'rgba(20, 28, 10, 0.52)',
+              backdropFilter: 'blur(8px)',
+              WebkitBackdropFilter: 'blur(8px)',
+              padding: '6px 16px',
+              borderRadius: '30px',
+              border: '1px solid rgba(255, 255, 255, 0.14)',
+              boxShadow: '0 4px 12px rgba(0, 0, 0, 0.25)'
+            }}
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-brand, #6E942A)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, backgroundColor: '#fff', borderRadius: '50%', padding: '2px' }}>
               <polyline points="20 6 9 17 4 12" />
             </svg>
-            <span className="hero-bullet-text" style={{ color: '#fff', fontFamily: 'var(--font-sans), Open Sans, sans-serif', fontSize: 'clamp(13px, 1.5vw, 18px)', fontWeight: '500', letterSpacing: '0.02em', textShadow: '0 1px 4px rgba(0,0,0,0.5)' }}>
+            <span className="hero-bullet-text" style={{ color: '#fff', fontFamily: 'var(--font-sans), Open Sans, sans-serif', fontSize: 'clamp(13px, 1.5vw, 17px)', fontWeight: '500', letterSpacing: '0.02em', textShadow: '0 1px 4px rgba(0,0,0,0.5)' }}>
               {text}
             </span>
           </div>
@@ -471,7 +517,7 @@ const Hero = ({ setIsOpen }) => {
           <div className="text-white font-medium text-[13px] sm:text-[15px] tracking-wide flex flex-wrap items-center gap-x-1" style={{ fontFamily: 'var(--font-jost), Montserrat, sans-serif' }}>
             <span>Priority Allotment EOI Amount:</span>
             <span style={{ animation: 'heroPriceBlink 1.4s infinite' }} className="flex items-center gap-1 mt-0.5 sm:mt-0">
-              <strong className="text-[#C59A3F] whitespace-nowrap">₹3 Lakhs</strong>
+              <strong className="text-[#6E942A] whitespace-nowrap">₹3 Lakhs</strong>
               <span className="text-white/90 font-normal text-[11px] sm:text-[13px] whitespace-nowrap">(3 & 4 BHK)</span>
             </span>
           </div>

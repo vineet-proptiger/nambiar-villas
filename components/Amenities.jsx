@@ -180,7 +180,7 @@ const Amenities = () => {
           font-weight: 700;
           text-transform: capitalize;
           color: transparent;
-          -webkit-text-stroke: 1px #C59A3F;
+          -webkit-text-stroke: 1px #6E942A;
           margin: 0;
           line-height: 1.2;
           font-family: "Montserrat", sans-serif;
@@ -190,8 +190,8 @@ const Amenities = () => {
         .fill_text {
           background: linear-gradient(
             90deg,
-            #C59A3F 0%,
-            #C59A3F var(--fill-progress, 0%),
+            #6E942A 0%,
+            #6E942A var(--fill-progress, 0%),
             transparent var(--fill-progress, 0%),
             transparent 100%
           );
@@ -231,7 +231,7 @@ const Amenities = () => {
         }
 
         .amenities-box:focus-visible {
-          outline: 3px solid #C59A3F;
+          outline: 3px solid #6E942A;
           outline-offset: 4px;
         }
 

@@ -6,14 +6,14 @@ const Highlights = ({ setIsOpen }) => {
       {/* Dark overlay for better contrast if needed, but since user said no bg color, I'll keep it mostly transparent or a very light overlay if text is bright. Wait, the SS has dark text on light cards, and gold text on dark background. I will add a subtle dark overlay so the gold text is visible, just in case, but let me check if there was an overlay originally. The user said "show koi bg colo na use kre". So I won't use a bg color. */}
       
       <div className="container-fluid max-w-[1300px] mx-auto relative z-10 py-[70px]">
-        <h2 className="text-[22px] sm:text-[28px] md:text-[36px] font-semibold leading-tight uppercase tracking-wider text-[#C59A3F] text-center" data-aos="fade-up" data-aos-duration="1000" style={{ fontFamily: "var(--font-jost), Montserrat, sans-serif", marginBottom: '10px' }}>
+        <h2 className="text-[22px] sm:text-[28px] md:text-[36px] font-semibold leading-tight uppercase tracking-wider text-[#6E942A] text-center" data-aos="fade-up" data-aos-duration="1000" style={{ fontFamily: "var(--font-jost), Montserrat, sans-serif", marginBottom: '10px' }}>
           PROJECT HIGHLIGHTS & USPS
         </h2>
         {/* Decorative Line */}
         <div className="flex items-center justify-center mt-3 mb-8" data-aos="fade-up" data-aos-duration="1000">
-          <div className="w-16 h-[1px] bg-[#0E4429]"></div>
-          <div className="w-2 h-2 rounded-full bg-[#0E4429] mx-3"></div>
-          <div className="w-16 h-[1px] bg-[#0E4429]"></div>
+          <div className="w-16 h-[1px] bg-[#6E942A]"></div>
+          <div className="w-2 h-2 rounded-full bg-[#6E942A] mx-3"></div>
+          <div className="w-16 h-[1px] bg-[#6E942A]"></div>
         </div>
         
         {/* 6 Highlights Cards Matching User Layout */}
@@ -36,7 +36,7 @@ const Highlights = ({ setIsOpen }) => {
           <div className="highlight-card gradient-green p-6 sm:p-7 rounded-2xl bg-[#eefcee] border-none shadow-md transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl flex flex-col items-center text-center" style={{ animation: '0.6s ease-out 0.1s 1 normal both running fadeInScale' }}>
             <div className="flex gap-4">
               <div className="flex-shrink-0 mt-1">
-                <svg className="w-8 h-8 text-[#0E4429]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-8 h-8 text-[#6E942A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
                 </svg>
               </div>
@@ -62,16 +62,16 @@ const Highlights = ({ setIsOpen }) => {
               </p>
           </div>
 
-          {/* Highlight 4: New Launch */}
+          {/* Highlight 4: Pre Launch */}
           <div className="highlight-card gradient-amber p-6 sm:p-7 rounded-2xl bg-[#fdf8ee] border-none shadow-md transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl flex flex-col items-center text-center" style={{ animation: '0.6s ease-out 0s 1 normal both running fadeInScale' }}>
               <div className="icon-float mb-4 relative" style={{ animation: 'float 3s ease-in-out infinite', animationDelay: '0.6s' }}>
                   <svg className="w-9 h-9 text-[#d97706]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path>
                   </svg>
               </div>
-              <h3 className="text-[18px] sm:text-[19px] font-bold mb-2 text-gray-900" style={{ fontFamily: "var(--font-jost), Montserrat, sans-serif" }}>New Launch on Bannerghatta Road</h3>
+              <h3 className="text-[18px] sm:text-[19px] font-bold mb-2 text-gray-900" style={{ fontFamily: "var(--font-jost), Montserrat, sans-serif" }}>Pre Launch on Bannerghatta Road</h3>
               <p className="text-gray-600 text-[13.5px] sm:text-[14.5px] leading-[1.65]">
-                  Be part of an exclusive New Launch opportunity in one of South Bangalore's most rapidly developing and highly sought-after residential corridors.
+                  Be part of an exclusive Pre Launch opportunity in one of South Bangalore's most rapidly developing and highly sought-after residential corridors.
               </p>
           </div>
 

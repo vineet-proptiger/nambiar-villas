@@ -190,7 +190,7 @@ const Navbar = ({ setIsOpen }) => {
         
         .header_style2 .header_navigation2 li a:hover,
         .header_style2.scrolled-up-expanded .header_navigation2 li a:hover {
-          color: #C59A3F !important;
+          color: #6E942A !important;
         }
 
         /* Phone Button styling in Nav */
@@ -442,8 +442,8 @@ const Navbar = ({ setIsOpen }) => {
           
           .header_style2.sticky .mob_nav_trigger,
           .header_style2.scrolled-up-expanded .mob_nav_trigger {
-            background: #DFB76C;
-            color: #1A2024;
+            background: #6E942A;
+            color: #ffffff;
           }
         }
 
@@ -500,19 +500,23 @@ const Navbar = ({ setIsOpen }) => {
           margin: 0;
         }
         .popup_menu ul li {
-          margin: 20px 0;
+          text-align: center;
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
         }
         .popup_menu ul li a {
+          font-family: var(--font-jost), Montserrat, sans-serif;
+          font-size: 24px;
+          font-weight: 700;
           color: #fff;
-          font-size: 28px;
-          font-family: var(--secondary_font);
           text-transform: uppercase;
           text-decoration: none;
           letter-spacing: 2px;
           transition: color 0.3s;
         }
         .popup_menu ul li a:hover {
-          color: #C59A3F;
+          color: #6E942A;
         }
 
         @keyframes Navbar_scale-in {
@@ -575,7 +579,7 @@ const Navbar = ({ setIsOpen }) => {
             <li><a href="#masterplan" onClick={() => setMobileOpen(false)}>Floor Plan</a></li>
             <li><a href="#location" onClick={() => setMobileOpen(false)}>Location</a></li>
             <li style={{ marginTop: '40px' }}>
-              <a href="tel:9718344024" style={{ color: '#C59A3F', fontSize: '20px' }}>
+              <a href="tel:9718344024" style={{ color: '#6E942A', fontSize: '20px' }}>
                 <Phone size={20} style={{ display: 'inline', marginRight: '8px' }}/> 9718344024
               </a>
             </li>

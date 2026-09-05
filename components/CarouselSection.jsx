@@ -180,9 +180,9 @@ const CarouselSection = ({ setIsOpen, title = "Glimpses of Masterpiece", subtitl
           </h2>
           {/* Decorative Line */}
           <div className="flex items-center justify-center mt-4 mb-3">
-            <div className="w-16 h-[1px] bg-[#0E4429]"></div>
-            <div className="w-2 h-2 rounded-full bg-[#0E4429] mx-3"></div>
-            <div className="w-16 h-[1px] bg-[#0E4429]"></div>
+            <div className="w-16 h-[1px] bg-[#6E942A]"></div>
+            <div className="w-2 h-2 rounded-full bg-[#6E942A] mx-3"></div>
+            <div className="w-16 h-[1px] bg-[#6E942A]"></div>
           </div>
         </div>
 

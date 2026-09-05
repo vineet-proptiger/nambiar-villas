@@ -1,8 +1,8 @@
 import { Check, BedDouble } from "lucide-react";
 
 const F_SANS = "var(--font-sans), Open Sans, sans-serif";
-const THEME_BLUE = "#0E4429";
-const GOLD = "#C59A3F";
+const THEME_BLUE = "#3D5915";
+const GOLD = "#6E942A";
 
 const units = [
   {
@@ -64,9 +64,9 @@ const Pricing = ({ setIsOpen }) => {
           
           {/* Decorative Line */}
           <div className="flex items-center justify-center mt-4 mb-3">
-            <div className="w-16 h-[1px] bg-[#0E4429]"></div>
-            <div className="w-2 h-2 rounded-full bg-[#0E4429] mx-3"></div>
-            <div className="w-16 h-[1px] bg-[#0E4429]"></div>
+            <div className="w-16 h-[1px] bg-[#6E942A]"></div>
+            <div className="w-2 h-2 rounded-full bg-[#6E942A] mx-3"></div>
+            <div className="w-16 h-[1px] bg-[#6E942A]"></div>
           </div>
         </div>
 
@@ -76,7 +76,7 @@ const Pricing = ({ setIsOpen }) => {
           {/* Connecting Line (Desktop only) */}
           <div className="hidden md:block absolute top-[110px] left-[25%] right-[25%] h-[1px] bg-[#d5e0dd] -z-10"></div>
           {/* Dot on the line between the 2 cards */}
-          <div className="hidden md:block absolute top-[106px] left-1/2 -translate-x-1/2 w-2.5 h-2.5 rounded-full border-[1.5px] border-[#125b4c] bg-white -z-10"></div>
+          <div className="hidden md:block absolute top-[106px] left-1/2 -translate-x-1/2 w-2.5 h-2.5 rounded-full border-[1.5px] border-[#3D5915] bg-white -z-10"></div>
 
           {units.map((unit, idx) => (
             <div
@@ -91,7 +91,7 @@ const Pricing = ({ setIsOpen }) => {
                 <HexShape color={unit.isPopular ? GOLD : THEME_BLUE} />
                 
                 {unit.isPopular && (
-                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#C59A3F] text-white text-[10px] font-bold px-4 py-1.5 rounded-full whitespace-nowrap z-20 tracking-wider shadow-sm">
+                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#6E942A] text-white text-[10px] font-bold px-4 py-1.5 rounded-full whitespace-nowrap z-20 tracking-wider shadow-sm">
                     MOST PREFERRED
                   </div>
                 )}
@@ -113,7 +113,7 @@ const Pricing = ({ setIsOpen }) => {
               {/* Price Section */}
               <div className="text-center mb-6 h-[70px] flex flex-col justify-end">
                 <p className="text-[10px] text-gray-500 font-bold tracking-widest uppercase mb-1" style={{ fontFamily: F_SANS }}>Starting At</p>
-                <p className={`text-[28px] font-bold ${unit.isPopular ? 'text-[#C59A3F]' : 'text-[#0E4429]'}`} style={{ fontFamily: F_SANS }}>
+                <p className={`text-[28px] font-bold ${unit.isPopular ? 'text-[#6E942A]' : 'text-[#3D5915]'}`} style={{ fontFamily: F_SANS }}>
                   {unit.price}
                 </p>
               </div>
@@ -133,7 +133,7 @@ const Pricing = ({ setIsOpen }) => {
               {/* Button */}
               <button
                 onClick={() => setIsOpen(true)}
-                className="w-full max-w-[220px] py-3.5 rounded-md text-[13px] font-bold tracking-wider uppercase transition-all duration-300 shadow-md hover:shadow-lg border-2 cursor-pointer bg-[#0E4429] border-[#0E4429] text-white hover:bg-[#C59A3F] hover:border-[#C59A3F]"
+                className="w-full max-w-[220px] py-3.5 rounded-md text-[13px] font-bold tracking-wider uppercase transition-all duration-300 shadow-md hover:shadow-lg border-2 cursor-pointer bg-[#3D5915] border-[#3D5915] text-white hover:bg-[#6E942A] hover:border-[#6E942A]"
               >
                 {unit.btnText}
               </button>
