@@ -117,13 +117,50 @@ const Hero = ({ setIsOpen }) => {
           }
         }
 
+        @keyframes heroPriceBadgeBlink {
+          0%, 75% { 
+            opacity: 1; 
+            box-shadow: 0 0 16px rgba(164, 220, 47, 0.5), inset 0 0 8px rgba(164, 220, 47, 0.2);
+          }
+          76%, 100% { 
+            opacity: 0; 
+            box-shadow: none; 
+          }
+        }
+
+        .hero-price-badge {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          gap: 12px;
+          vertical-align: middle;
+          padding: 6px 22px 6px 16px;
+          background: radial-gradient(130% 130% at 50% 30%, #1e3e0e 0%, #102407 65%, #0a1705 100%);
+          border: 1.5px solid #a4dc2f;
+          border-radius: 9999px;
+          box-shadow: 0 0 16px rgba(164, 220, 47, 0.5), inset 0 0 8px rgba(164, 220, 47, 0.2);
+          animation: heroPriceBadgeBlink 1.4s infinite;
+          backdrop-filter: blur(8px);
+          -webkit-backdrop-filter: blur(8px);
+        }
+
+        .hero-price-leaf {
+          width: 28px;
+          height: 28px;
+          object-fit: contain;
+          flex-shrink: 0;
+          display: inline-block;
+        }
+
         .hero-price-amt {
           font-family: var(--font-jost), Montserrat, sans-serif;
-          font-size: clamp(20px, 3vw, 36px);
+          font-size: clamp(22px, 3.5vw, 30px);
           font-weight: 800;
-          color: #fff;
-          animation: heroPriceBlink 1.4s infinite;
+          color: #fff !important;
           display: inline-block;
+          line-height: 1.2;
+          letter-spacing: 0.02em;
+          white-space: nowrap;
         }
 
         /* CTA Row */
@@ -405,9 +442,21 @@ const Hero = ({ setIsOpen }) => {
               color: #6E942A !important;
               text-shadow: none !important;
             }
-            .hero-subtitle, .hero-price-line, .hero-price-amt, .hero-bullet-text, .hero-price-digits {
+            .hero-subtitle, .hero-price-line, .hero-bullet-text, .hero-price-digits {
               color: #1A2024 !important;
               text-shadow: none !important;
+            }
+            .hero-price-badge {
+              padding: 5px 18px 5px 14px !important;
+              gap: 10px !important;
+            }
+            .hero-price-leaf {
+              width: 24px !important;
+              height: 24px !important;
+            }
+            .hero-price-badge .hero-price-amt {
+              font-size: 20px !important;
+              color: #ffffff !important;
             }
             .hero-subtitle {
               font-size: 16px !important;
@@ -561,16 +610,15 @@ const Hero = ({ setIsOpen }) => {
             Price Starts
           </span>
           <br className="block lg:hidden" />
-          <span className="hero-price-amt mt-2 lg:mt-0" style={{ 
-            fontSize: 'clamp(24px, 4vw, 30px)', 
-            lineHeight: '1.2', 
-            verticalAlign: 'middle',
-            padding: '4px 18px',
-            background: 'rgba(197, 154, 63, 0.18)',
-            border: '1px solid rgba(197, 154, 63, 0.55)',
-            borderRadius: '30px'
-          }}>
-            ₹ 4.99 Cr*
+          <span className="hero-price-badge mt-2 lg:mt-0">
+            <img 
+              src="/leaf-transparent.png" 
+              alt="Leaf" 
+              className="hero-price-leaf" 
+            />
+            <span className="hero-price-amt">
+              ₹ 4.99 Cr*
+            </span>
           </span>
         </p>
 
