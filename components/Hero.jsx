@@ -451,12 +451,12 @@ const Hero = ({ setIsOpen }) => {
             display: none !important;
           }
           .hero-title {
-            font-size: 24px !important;
+            font-size: clamp(18px, 5.2vw, 20px) !important;
             font-weight: 800 !important;
             color: #243810 !important;
             text-shadow: none !important;
             margin: 0 0 4px !important;
-            line-height: 1.15 !important;
+            line-height: 1.2 !important;
           }
           .hero-subtitle {
             font-size: 13.5px !important;
