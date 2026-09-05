@@ -451,7 +451,7 @@ const Hero = ({ setIsOpen }) => {
             display: none !important;
           }
           .hero-title {
-            font-size: clamp(18px, 5.2vw, 20px) !important;
+            font-size: clamp(21px, 5.8vw, 23px) !important;
             font-weight: 800 !important;
             color: #243810 !important;
             text-shadow: none !important;
