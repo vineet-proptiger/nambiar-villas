@@ -269,6 +269,40 @@ const Hero = ({ setIsOpen }) => {
           background: #fff;
         }
 
+        /* ─── Desktop & Tablet Layer Badges (Only screen width >= 768px) ─── */
+        @media (min-width: 768px) {
+          .hero-title-badge {
+            display: inline-block;
+            background: rgba(20, 28, 10, 0.58);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            padding: 6px 18px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+          }
+          .hero-subtitle-badge {
+            display: inline-block;
+            background: rgba(20, 28, 10, 0.52);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            padding: 5px 16px;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+          }
+          .hero-bullet-badge {
+            background: rgba(20, 28, 10, 0.52);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            padding: 6px 16px;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+            width: fit-content;
+          }
+        }
+
         /* ─── Tablet ─── */
         @media (min-width: 768px) and (max-width: 1023px) {
           .hero-container {
@@ -332,6 +366,32 @@ const Hero = ({ setIsOpen }) => {
               background: transparent !important;
               padding: 24px 20px 28px !important;
               z-index: 1;
+            }
+            /* Reset layer badges completely on mobile */
+            .hero-title-badge,
+            .hero-subtitle-badge {
+              background: transparent !important;
+              border: none !important;
+              border-radius: 0 !important;
+              padding: 0 !important;
+              box-shadow: none !important;
+              backdrop-filter: none !important;
+              -webkit-backdrop-filter: none !important;
+              display: inline-block !important;
+            }
+            .hero-bullet-item,
+            .hero-bullet-badge {
+              display: flex !important;
+              align-items: center !important;
+              gap: 8px !important;
+              padding: 0 !important;
+              background: transparent !important;
+              border: none !important;
+              border-radius: 0 !important;
+              box-shadow: none !important;
+              backdrop-filter: none !important;
+              -webkit-backdrop-filter: none !important;
+              width: 100% !important;
             }
             /* Removed leaf overlay */
             .hero-overlay {
@@ -438,45 +498,19 @@ const Hero = ({ setIsOpen }) => {
 
         {/* Main Heading */}
         <h1 className="hero-title">
-          <span 
-            style={{
-              display: 'inline-block',
-              background: 'rgba(20, 28, 10, 0.58)',
-              backdropFilter: 'blur(8px)',
-              WebkitBackdropFilter: 'blur(8px)',
-              padding: '6px 18px',
-              borderRadius: '12px',
-              border: '1px solid rgba(255, 255, 255, 0.15)',
-              boxShadow: '0 4px 16px rgba(0, 0, 0, 0.3)'
-            }}
-          >
+          <span className="hero-title-badge">
             Nambiar Luxury Villas
           </span>
         </h1>
 
         {/* Subtitle */}
         <p className="hero-subtitle">
-          <span 
-            style={{ 
-              display: 'inline-block',
-              background: 'rgba(20, 28, 10, 0.52)',
-              backdropFilter: 'blur(8px)',
-              WebkitBackdropFilter: 'blur(8px)',
-              padding: '5px 16px',
-              borderRadius: '30px',
-              border: '1px solid rgba(255, 255, 255, 0.14)',
-              fontSize: '0.9em', 
-              fontWeight: 600, 
-              textTransform: 'none', 
-              color: '#fff',
-              boxShadow: '0 4px 12px rgba(0, 0, 0, 0.25)'
-            }}
-          >
+          <span className="hero-subtitle-badge" style={{ fontSize: '0.9em', fontWeight: 600, textTransform: 'none' }}>
             Pre Launch At Bannerghatta Road, Bangalore.
           </span>
         </p>
         
-        {/* Bullet Points with Backdrop Layer */}
+        {/* Bullet Points with Backdrop Layer (Desktop only via CSS) */}
         <div className="hero-bullets" style={{ marginBottom: '24px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
           {[
             "Premium 4 & 5 BHK Luxury Villas",
@@ -486,25 +520,17 @@ const Hero = ({ setIsOpen }) => {
           ].map((text, i) => (
           <div 
             key={i} 
-            className="hero-bullet-item" 
+            className="hero-bullet-item hero-bullet-badge" 
             style={{ 
               display: 'inline-flex', 
               alignItems: 'center', 
-              gap: '10px',
-              width: 'fit-content',
-              background: 'rgba(20, 28, 10, 0.52)',
-              backdropFilter: 'blur(8px)',
-              WebkitBackdropFilter: 'blur(8px)',
-              padding: '6px 16px',
-              borderRadius: '30px',
-              border: '1px solid rgba(255, 255, 255, 0.14)',
-              boxShadow: '0 4px 12px rgba(0, 0, 0, 0.25)'
+              gap: '10px'
             }}
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-brand, #6E942A)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, backgroundColor: '#fff', borderRadius: '50%', padding: '2px' }}>
               <polyline points="20 6 9 17 4 12" />
             </svg>
-            <span className="hero-bullet-text" style={{ color: '#fff', fontFamily: 'var(--font-sans), Open Sans, sans-serif', fontSize: 'clamp(13px, 1.5vw, 17px)', fontWeight: '500', letterSpacing: '0.02em', textShadow: '0 1px 4px rgba(0,0,0,0.5)' }}>
+            <span className="hero-bullet-text" style={{ fontFamily: 'var(--font-sans), Open Sans, sans-serif', fontSize: 'clamp(13px, 1.5vw, 17px)', fontWeight: '500', letterSpacing: '0.02em' }}>
               {text}
             </span>
           </div>
