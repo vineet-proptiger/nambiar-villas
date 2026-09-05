@@ -107,18 +107,37 @@ const CarouselSection = ({ setIsOpen, title = "Glimpses of Masterpiece", subtitl
   if (!images || images.length === 0) return null;
 
   return (
-    <section id={id} style={{
-      scrollMarginTop: '80px',
-      padding: '42px 0 72px 0',
-      background: '#f9f9f9',
-      color: '#121212',
-      fontFamily: '"Montserrat", var(--font-montserrat), sans-serif',
-      fontSize: '15px',
-      lineHeight: '150%',
-      margin: 0,
-      boxSizing: 'border-box',
-      overflow: 'hidden'
-    }}>
+    <section 
+      id={id} 
+      className="relative"
+      style={{
+        scrollMarginTop: '80px',
+        padding: '56px 0 84px 0',
+        background: id === 'amenities' 
+          ? 'linear-gradient(180deg, #0d1705 0%, #16260b 50%, #0a1304 100%)' 
+          : '#f9f9f9',
+        color: id === 'amenities' ? '#ffffff' : '#121212',
+        fontFamily: '"Montserrat", var(--font-montserrat), sans-serif',
+        fontSize: '15px',
+        lineHeight: '150%',
+        margin: 0,
+        boxSizing: 'border-box',
+        overflow: 'hidden'
+      }}
+    >
+      {/* ── Ambient Luxury Deep Glow (Amenities only) ── */}
+      {id === 'amenities' && (
+        <>
+          {/* Top-Right Soft Emerald Orb */}
+          <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full bg-[#6E942A]/20 blur-[110px] pointer-events-none" />
+          
+          {/* Bottom-Left Soft Forest Orb */}
+          <div className="absolute -bottom-32 -left-32 w-[500px] h-[500px] rounded-full bg-[#3D5915]/25 blur-[110px] pointer-events-none" />
+
+          {/* Center Subtle Resort Glow */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[750px] h-[380px] rounded-full bg-[#a4dc2f]/10 blur-[100px] pointer-events-none" />
+        </>
+      )}
       <style dangerouslySetInnerHTML={{ __html: `
         @keyframes progressLine {
           0% { width: 0%; }
@@ -173,16 +192,21 @@ const CarouselSection = ({ setIsOpen, title = "Glimpses of Masterpiece", subtitl
 
         <div className="text-center mb-10 md:mb-12" data-aos="fade-up" data-aos-duration="1000">
           <h2
-            className="text-[22px] sm:text-[28px] md:text-[36px] font-semibold leading-tight uppercase tracking-wider text-gray-900 mx-auto"
-            style={{ fontFamily: "var(--font-jost), Montserrat, sans-serif" }}
+            className={`text-[22px] sm:text-[28px] md:text-[36px] font-semibold leading-tight uppercase tracking-wider mx-auto ${
+              id === 'amenities' ? 'text-white' : 'text-gray-900'
+            }`}
+            style={{ 
+              fontFamily: "var(--font-jost), Montserrat, sans-serif",
+              textShadow: id === 'amenities' ? '0 2px 16px rgba(0,0,0,0.6)' : 'none'
+            }}
           >
             {title}
           </h2>
           {/* Decorative Line */}
           <div className="flex items-center justify-center mt-4 mb-3">
-            <div className="w-16 h-[1px] bg-[#6E942A]"></div>
-            <div className="w-2 h-2 rounded-full bg-[#6E942A] mx-3"></div>
-            <div className="w-16 h-[1px] bg-[#6E942A]"></div>
+            <div className={`w-16 h-[1.5px] ${id === 'amenities' ? 'bg-[#a4dc2f]/70' : 'bg-[#6E942A]'}`}></div>
+            <div className={`w-2.5 h-2.5 rounded-full ${id === 'amenities' ? 'bg-[#a4dc2f] mx-3 ring-4 ring-[#a4dc2f]/25' : 'bg-[#6E942A] mx-3'}`}></div>
+            <div className={`w-16 h-[1.5px] ${id === 'amenities' ? 'bg-[#a4dc2f]/70' : 'bg-[#6E942A]'}`}></div>
           </div>
         </div>
 
@@ -355,7 +379,11 @@ const CarouselSection = ({ setIsOpen, title = "Glimpses of Masterpiece", subtitl
                 {extendedImages.map((img, idx) => (
                   <div 
                     key={idx} 
-                    className="relative flex-shrink-0 group overflow-hidden bg-gray-200 cursor-pointer"
+                    className={`relative flex-shrink-0 group overflow-hidden cursor-pointer ${
+                      id === 'amenities'
+                        ? 'rounded-2xl border border-[#a4dc2f]/30 shadow-[0_20px_45px_rgba(0,0,0,0.65)] bg-[#111c08]'
+                        : 'bg-gray-200'
+                    }`}
                     style={{ width: 'var(--slide-w)', aspectRatio: '16/9' }}
                     onClick={() => setSelectedImgIndex(getRealIndex(idx))}
                   >
@@ -411,13 +439,27 @@ const CarouselSection = ({ setIsOpen, title = "Glimpses of Masterpiece", subtitl
 
             {/* ── Bottom Arrows ── */}
             <div className="flex items-center gap-3 mt-6 ml-2">
-              <button onClick={prevSlide} className="flex items-center justify-center w-10 h-10 rounded-full border border-gray-400 text-gray-600 hover:bg-gray-200 transition-colors">
+              <button 
+                onClick={prevSlide} 
+                className={`flex items-center justify-center w-10 h-10 rounded-full transition-colors ${
+                  id === 'amenities'
+                    ? 'border border-white/30 text-white hover:bg-[#6E942A] hover:border-[#6E942A]'
+                    : 'border border-gray-400 text-gray-600 hover:bg-gray-200'
+                }`}
+              >
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                   <line x1="19" y1="12" x2="5" y2="12" />
                   <polyline points="12 19 5 12 12 5" />
                 </svg>
               </button>
-              <button onClick={nextSlide} className="flex items-center justify-center w-10 h-10 rounded-full border border-gray-400 text-gray-600 hover:bg-gray-200 transition-colors">
+              <button 
+                onClick={nextSlide} 
+                className={`flex items-center justify-center w-10 h-10 rounded-full transition-colors ${
+                  id === 'amenities'
+                    ? 'border border-white/30 text-white hover:bg-[#6E942A] hover:border-[#6E942A]'
+                    : 'border border-gray-400 text-gray-600 hover:bg-gray-200'
+                }`}
+              >
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                   <line x1="5" y1="12" x2="19" y2="12" />
                   <polyline points="12 5 19 12 12 19" />
