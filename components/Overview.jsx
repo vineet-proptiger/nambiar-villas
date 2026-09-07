@@ -59,7 +59,7 @@ const Overview = ({ setIsOpen }) => {
             className="relative p-6 sm:p-8 rounded-2xl shadow-[0_12px_36px_rgba(48,64,23,0.18)] overflow-hidden flex-1 flex flex-col justify-between" 
             style={{ background: '#304017' }}
           >
-            <div style={isExpanded ? {} : { display: '-webkit-box', WebkitLineClamp: '7', WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+            <div>
               <p style={{ fontSize: '15.5px', fontFamily: '"Poppins", sans-serif', color: '#E5EDDC', textAlign: 'justify', lineHeight: '1.85', margin: 0 }}>
                 <span 
                   style={{ 
@@ -75,15 +75,21 @@ const Overview = ({ setIsOpen }) => {
                 >
                   N
                 </span>
-                <span style={{ fontWeight: '700', color: '#FFFFFF' }}>ambiar Bannerghatta Villas</span> is a premium villa development by Nambiar Group located at Bannerghatta Road in South Bangalore. The project is presented as a spacious villa township with Phase 1 covering 32+ acres and a total of 198 exclusive villas. The development offers premium villas with spacious layouts, contemporary architecture and dedicated plot areas. The project highlights approximately 80% open space and a 70,000 sq. ft. clubhouse, creating a low-density residential environment with extensive landscaped surroundings.
-                
+                <span style={{ fontWeight: '700', color: '#FFFFFF' }}>ambiar Bannerghatta Villas</span> is a premium villa development by Nambiar Group located at Bannerghatta Road in South Bangalore. The project is presented as a spacious villa township with Phase 1 covering 32+ acres and a total of 198 exclusive villas.
+                {!isExpanded ? '... ' : ' '}
+                {isExpanded && (
+                  <span>
+                    The development offers premium villas with spacious layouts, contemporary architecture and dedicated plot areas. The project highlights approximately 80% open space and a 70,000 sq. ft. clubhouse, creating a low-density residential environment with extensive landscaped surroundings.{' '}
+                  </span>
+                )}
                 <button 
                   onClick={() => setIsExpanded(!isExpanded)}
-                  className="text-[#95B325] hover:text-[#b4e03c] font-bold inline-flex items-center gap-1 transition-colors cursor-pointer ml-2"
+                  type="button"
+                  className="text-[#95B325] hover:text-[#b4e03c] font-bold inline-flex items-center gap-1 transition-colors cursor-pointer ml-1 select-none focus:outline-none"
                   style={{ fontSize: '15px' }}
                 >
-                  {isExpanded ? 'Read Less' : 'Read More'}
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className={`transform transition-transform ${isExpanded ? 'rotate-180' : ''}`}>
+                  <span>{isExpanded ? 'Read Less' : 'Read More'}</span>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className={`transform transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`}>
                     <polyline points="6 9 12 15 18 9"></polyline>
                   </svg>
                 </button>
